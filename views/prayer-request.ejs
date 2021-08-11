@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Georama' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTCA Prayer Request</title>
+</head>
+<body style="font-family:Georama">
+    <div class="container">
+        <h1>Submit a Prayer Request</h1>
+        <p style="color:grey">At Bethesda Temple Church of Alton, prayer is held daily. Add your request to our lisitng so that we may begin to interceed together</p>
+        <p> Fill out the form below to add your request to the list</p>
+        <hr>
+        <form method="POST" action="/add-request">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+          </div>
+          <div class="mb-3">
+            <label for="request" class="form-label">Prayer Request</label>
+            <textarea class="form-control" id="request" name="request" rows="3" placeholder="Enter your prayer request here"></textarea>
+          </div>
+          <button class="btn-lg btn-warning" type="submit">Submit</button>
+        </div>
+        </form>
+    <section>
+        <div class="container">
+            <hr><hr>
+            <h1>Prayer Request Listing</h1>
+
+            <% if (prayerRequest.length > 0) { %>
+                <% prayerRequest.forEach(prayerRequest => { %>
+                <div style="padding:50px;margin:10px;background-color:gainsboro;border-radius:5rem">
+                    
+                    <h4><%=prayerRequest.request %> </h4>
+                    <div style="color:grey">
+                      
+                    <p>- <%= prayerRequest.name %></p>
+                    </div>
+                </div>
+                    <% }) %>
+                <% } %>
+        </div>
+
+    </section>
+</body>
+</html>
