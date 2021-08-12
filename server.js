@@ -7,11 +7,11 @@ const bodyParser = require('body-parser');
 
 app.set('view engine' , 'ejs'); 
 
-
+const PORT = process.env.PORT || 5000;
 
 const database = process.env.DATABASE_CONNECTION_STRING; 
 mongoose.connect(database, { useNewUrlParser: true, useUnifiedTopology: true})
-.then((result) => app.listen(8000, () => {console.log("The Express server is listening on Port: 8000")}))
+.then((result) => app.listen(PORT, () => {console.log(`The Express Server is Listening on Port ${PORT}`)}))
 .catch((err) => console.log(err)); 
 
 app.use((req, res, next) => {
