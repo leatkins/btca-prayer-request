@@ -51,7 +51,7 @@ app.get('/all-request', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    prayerRequest.find().sort({createdAt: -1})
+    prayerRequest.find().sort({createdAt: -1}).limit(20)
     .then((result) =>{
     res.render('prayer-request', {prayerRequest:result})
     })
