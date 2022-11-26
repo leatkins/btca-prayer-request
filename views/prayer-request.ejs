@@ -33,12 +33,13 @@
 
             <% if (prayerRequest.length > 0) { %>
                 <% prayerRequest.forEach(prayerRequest => { %>
-                <div style="padding:50px;margin:10px;background-color:gainsboro;border-radius:5rem">
+                <div style="padding:50px;margin:10px;border-top: solid; border-bottom: solid;border-color: #C41E3A; border-radius:1rem;">
                     
                     <h4><%=prayerRequest.request %> </h4>
                     <div style="color:grey">
                       
                     <p>- <%= prayerRequest.name %></p>
+                    <p><strong>Request Made On: </strong> <%= prayerRequest.createdAt %></p>
                     </div>
                 </div>
                     <% }) %>
