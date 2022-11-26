@@ -26,8 +26,7 @@ app.post('/add-request', (req, res) => {
     console.log(req.body); 
     const request = new prayerRequest({ 
         name: req.body.name, 
-        request: req.body.request, 
-        dateTime: req.body
+        request: req.body.request
     }); 
     request.save()
         .then((result) =>{
